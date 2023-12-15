@@ -1,0 +1,651 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Programa_Fact",
+    "dateExported": "2023-12-04T02:54:30.934Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "b172b2f5-fa96-4a63-9e3a-4949809b4783",
+            "name": "Login",
+            "containerId": "",
+            "created": "2023-11-18T12:32:11.456Z",
+            "sortNum": 3750
+        },
+        {
+            "_id": "a6f424e2-d988-475d-b0b6-e434731dfbef",
+            "name": "Usuario",
+            "containerId": "",
+            "created": "2023-11-18T12:32:11.459Z",
+            "sortNum": 5000
+        },
+        {
+            "_id": "92e5a79c-8fac-442c-aaf0-f0db72d43992",
+            "name": "Producto",
+            "containerId": "",
+            "created": "2023-11-18T12:32:11.458Z",
+            "sortNum": 6250
+        },
+        {
+            "_id": "6e40c2cf-fc40-4b68-b7bb-36257ae175fe",
+            "name": "Facturas",
+            "containerId": "",
+            "created": "2023-11-18T12:32:11.460Z",
+            "sortNum": 7500
+        },
+        {
+            "_id": "973d979c-756d-4022-9aac-7b9ceda944ca",
+            "name": "Cliente",
+            "containerId": "",
+            "created": "2023-11-18T12:32:11.455Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "fabc0317-f0dd-4d6b-b5ad-24baa51d3979",
+            "name": "Servicio",
+            "containerId": "",
+            "created": "2023-11-18T12:32:11.457Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "60dffa7e-b34a-4446-a73e-6fa1de2aef4f",
+            "name": "Ranking",
+            "containerId": "",
+            "created": "2023-11-18T12:32:11.461Z",
+            "sortNum": 50000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "e6effd62-7589-4f70-85d6-98f82bba6416",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "973d979c-756d-4022-9aac-7b9ceda944ca",
+            "name": "Mostrar todos los clientes de un usuario",
+            "url": "/user/1/client",
+            "method": "GET",
+            "sortNum": 2500,
+            "created": "2023-11-18T12:32:11.455Z",
+            "modified": "2023-11-18T12:32:11.455Z",
+            "headers": [
+                {
+                    "name": "user-id",
+                    "value": "1",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "31e3c4a8-f368-4201-a975-eb827514767d",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "973d979c-756d-4022-9aac-7b9ceda944ca",
+            "name": "Mostrar cliente por id",
+            "url": "/user/1/client/1",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2023-11-18T12:32:11.457Z",
+            "modified": "2023-11-28T13:50:51.049Z",
+            "headers": [
+                {
+                    "name": "user-id",
+                    "value": "1",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "12ace444-5d58-44c2-acc6-63a9b0be69b4",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "fabc0317-f0dd-4d6b-b5ad-24baa51d3979",
+            "name": "Mostrar servicio por id ",
+            "url": "/user/1/services/1",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2023-11-18T12:32:11.468Z",
+            "modified": "2023-11-18T12:32:11.468Z",
+            "headers": [
+                {
+                    "name": "user-id",
+                    "value": "1",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "676c3a6b-e7c1-4899-bcca-e5367655ea0c",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "a6f424e2-d988-475d-b0b6-e434731dfbef",
+            "name": "Crear Usuario",
+            "url": "/crearUsuario",
+            "method": "POST",
+            "sortNum": 5000,
+            "created": "2023-11-18T14:21:38.802Z",
+            "modified": "2023-12-04T02:53:59.792Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre_usuario\": \"Tala\",\n  \"correo_electronico\": \"BK@examp1e.com\",\n  \"contrasena\": \"contrasena123\" ,\n  \"categoria\": \"C\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a58a655c-6b13-4417-985a-e73d35e3a547",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "b172b2f5-fa96-4a63-9e3a-4949809b4783",
+            "name": "POST_Login",
+            "url": "/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-18T12:32:11.456Z",
+            "modified": "2023-11-28T15:41:01.507Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Basic",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "ejemploA@example.com",
+                    "password": "contrasenaA"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "3897f797-7c23-46a4-95d6-83c21e6af869",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "a6f424e2-d988-475d-b0b6-e434731dfbef",
+            "name": "Modificar Usuario",
+            "url": "/user/11/update",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2023-11-18T12:32:11.461Z",
+            "modified": "2023-12-04T02:54:05.420Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoyLCJleHAiOjE2OTk2NzQ1NTZ9.R02KHUCcNy1JXS-YWr_oczA2F0MRLId6Sg9-ffn6Hs0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo_electronico\": \"passe@example.com\",\n  \"contrasena\": \"pass\",\n  \"nombre_usuario\": \"Bes\"\n }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a0e9235c-85d3-44cb-b774-e554fadcda2f",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "92e5a79c-8fac-442c-aaf0-f0db72d43992",
+            "name": "Mostrar todos los productos",
+            "url": "/user/1/product",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-18T12:32:11.462Z",
+            "modified": "2023-11-18T14:10:55.522Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "74986740-bcb0-4873-a7f3-83c0a1a2b022",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "fabc0317-f0dd-4d6b-b5ad-24baa51d3979",
+            "name": "Mostrar todos los Servicios",
+            "url": "/user/1/services",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-18T12:32:11.467Z",
+            "modified": "2023-11-18T12:32:11.467Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f5ef9944-65dd-47ac-86a8-5d7a16e9a8a7",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "60dffa7e-b34a-4446-a73e-6fa1de2aef4f",
+            "name": "Ranking de ventas por servicio",
+            "url": "/user/1/ranking/service",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-18T12:32:11.481Z",
+            "modified": "2023-11-28T13:45:33.583Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6c15295c-7604-4ff9-aaab-ae5bb3610e98",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "92e5a79c-8fac-442c-aaf0-f0db72d43992",
+            "name": "Mostrar producto por id",
+            "url": "/user/1/product/1",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-11-18T12:32:11.466Z",
+            "modified": "2023-11-18T14:15:42.071Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "45570548-e7a1-4e2a-b4c7-a51547364c8c",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "973d979c-756d-4022-9aac-7b9ceda944ca",
+            "name": "Modificar cliente",
+            "url": "/user/1/client/1",
+            "method": "PUT",
+            "sortNum": 17500,
+            "created": "2023-11-18T12:32:11.459Z",
+            "modified": "2023-11-18T15:04:22.516Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo_electronico\": \"cliente1@example.com\",\n  \"direccion\": \"Calle 123\",\n  \"dni\": \"12345670\",\n  \"nombre_cliente\": \"Cliente1\",\n  \"telefono\": \"555-1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "049864bd-95af-4e1a-8603-a5961856bb48",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "60dffa7e-b34a-4446-a73e-6fa1de2aef4f",
+            "name": "Ranking de ventas por cliente",
+            "url": "/user/1/ranking/client",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-18T12:32:11.482Z",
+            "modified": "2023-11-28T13:42:38.844Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6bdda032-3b40-458f-9571-055f00009d4e",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "973d979c-756d-4022-9aac-7b9ceda944ca",
+            "name": "Crear nuevo cliente",
+            "url": "/user/1/client",
+            "method": "POST",
+            "sortNum": 22500,
+            "created": "2023-11-18T12:32:11.458Z",
+            "modified": "2023-11-18T12:32:11.458Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"correo_electronico\": \"geronimoss@example.com\",\n    \"direccion\": \"Avenida Planta 456, Ciudad B\",\n    \"nombre_cliente\": \"anonimous Martínez\",\n    \"telefono\": \"555-3456\",\n    \"dni\": \"12345679\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5aa323cd-0319-4abf-9704-e08f6dcb3777",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "fabc0317-f0dd-4d6b-b5ad-24baa51d3979",
+            "name": "Modificar un servicio existente ",
+            "url": "/user/1/services/6",
+            "method": "PUT",
+            "sortNum": 25000,
+            "created": "2023-11-18T12:32:11.470Z",
+            "modified": "2023-11-18T15:41:33.219Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre_servicio\": \"Masajes Corporales\",\n  \"precio\": \"1.99\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7223ebff-79c4-489d-ac42-5e29e94591a1",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "fabc0317-f0dd-4d6b-b5ad-24baa51d3979",
+            "name": "Agregar un nuevo servicio",
+            "url": "/user/1/services",
+            "method": "POST",
+            "sortNum": 26250,
+            "created": "2023-11-18T12:32:11.469Z",
+            "modified": "2023-11-18T12:32:11.469Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre_servicio\": \"Masajes Corporales Completos\",\n  \"precio\": \"49.99\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e2623767-5235-4f69-8213-2db5153140ec",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "973d979c-756d-4022-9aac-7b9ceda944ca",
+            "name": "Eliminacion de Cliente",
+            "url": "/user/1/client/7",
+            "method": "DELETE",
+            "sortNum": 27500,
+            "created": "2023-11-18T12:32:11.460Z",
+            "modified": "2023-11-18T14:40:12.414Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1c71371c-635d-482e-8ce5-453225899fa9",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "fabc0317-f0dd-4d6b-b5ad-24baa51d3979",
+            "name": "Eliminar un servicio",
+            "url": "/user/1/services/6",
+            "method": "DELETE",
+            "sortNum": 27500,
+            "created": "2023-11-18T12:32:11.471Z",
+            "modified": "2023-11-18T15:44:34.628Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2012af0e-6546-4ec5-a942-415c4d059249",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "92e5a79c-8fac-442c-aaf0-f0db72d43992",
+            "name": "Modificar un producto existente",
+            "url": "/user/1/product/3",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-11-18T12:32:11.464Z",
+            "modified": "2023-12-02T14:32:33.036Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"nombre_producto\": \"ProductoA3\",\n    \"precio\": \"20.99\",\n    \"stock\": 22\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3bfa0271-130e-431d-9a56-9ebba0a8e587",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "6e40c2cf-fc40-4b68-b7bb-36257ae175fe",
+            "name": "Mostrar todo lo facturado",
+            "url": "/user/1/factura",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-18T12:32:11.472Z",
+            "modified": "2023-11-30T15:44:02.546Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e9a624a2-bf97-4ebe-bab0-c805f436fb9a",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "60dffa7e-b34a-4446-a73e-6fa1de2aef4f",
+            "name": "Ranking de ventas por producto",
+            "url": "/user/1/product/ranking",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-18T12:32:11.480Z",
+            "modified": "2023-11-28T13:49:27.073Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d81be0c7-c880-4f3d-bc97-a926af8284ef",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "92e5a79c-8fac-442c-aaf0-f0db72d43992",
+            "name": "Agregar un nuevo producto ",
+            "url": "/user/1/product",
+            "method": "POST",
+            "sortNum": 35000,
+            "created": "2023-11-18T12:32:11.463Z",
+            "modified": "2023-12-01T13:44:05.549Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"nombre_producto\":\"Laptop\",\n    \"precio\":400,\n    \"stock\":10\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6292250f-5ddb-4283-8dce-5f96671deb0a",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "92e5a79c-8fac-442c-aaf0-f0db72d43992",
+            "name": "Eliminar un producto",
+            "url": "/user/1/product/10",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-11-18T12:32:11.465Z",
+            "modified": "2023-12-01T13:45:59.876Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7f832ac2-5918-44be-854a-b013c345f60c",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "6e40c2cf-fc40-4b68-b7bb-36257ae175fe",
+            "name": "Mostrar factura por id",
+            "url": "/user/1/factura/8",
+            "method": "GET",
+            "sortNum": 45000,
+            "created": "2023-11-18T13:36:49.082Z",
+            "modified": "2023-11-28T21:50:05.836Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b063be95-c31b-4823-875a-ef2ab550d0d7",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "6e40c2cf-fc40-4b68-b7bb-36257ae175fe",
+            "name": "Monto total facturado por cliente",
+            "url": "/user/1/factura/1/total",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-11-18T12:32:11.476Z",
+            "modified": "2023-11-18T16:00:28.054Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "068dd118-1ce4-41ad-968d-45b0adfb305a",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "6e40c2cf-fc40-4b68-b7bb-36257ae175fe",
+            "name": "Monto total facturado por usuario",
+            "url": "/user/1/factura/total",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-11-18T12:32:11.477Z",
+            "modified": "2023-11-18T12:32:11.477Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "36a6eb08-f4f6-4848-bbbf-643548a7e3db",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "6e40c2cf-fc40-4b68-b7bb-36257ae175fe",
+            "name": "Mostrar detalle factura por id",
+            "url": "/user/1/factura/28/detalle",
+            "method": "GET",
+            "sortNum": 135000,
+            "created": "2023-11-18T12:32:11.473Z",
+            "modified": "2023-11-30T12:45:22.859Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9216dbe5-4111-4e40-ad34-949a36eff53f",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "6e40c2cf-fc40-4b68-b7bb-36257ae175fe",
+            "name": "Mostrar detalle factura por Usuario",
+            "url": "/user/1/factura/detalle",
+            "method": "GET",
+            "sortNum": 138750,
+            "created": "2023-11-28T13:09:39.764Z",
+            "modified": "2023-11-28T13:10:49.238Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a9ee1c7d-d40d-445c-a2b7-8df648cbafc5",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "6e40c2cf-fc40-4b68-b7bb-36257ae175fe",
+            "name": "Crear una factura",
+            "url": "/user/1/facturas",
+            "method": "POST",
+            "sortNum": 142500,
+            "created": "2023-11-18T12:32:11.475Z",
+            "modified": "2023-12-02T11:53:22.453Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id_cliente\": 1, \n  \"productos\": {\n    \"3\": 1\n  },\n  \"id_servicio\": null,\n  \"fecha\": \"2023-11-30\", \n  \"total\": 100         \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ff3619c4-d409-403c-9e91-41ab98bfe070",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "6e40c2cf-fc40-4b68-b7bb-36257ae175fe",
+            "name": "Anulacion de factura",
+            "url": "/user/1/factura/7",
+            "method": "DELETE",
+            "sortNum": 170000,
+            "created": "2023-11-18T12:32:11.474Z",
+            "modified": "2023-11-28T15:52:45.533Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0a93f0dd-893b-452d-aebf-fcdd5c4fab04",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "a6f424e2-d988-475d-b0b6-e434731dfbef",
+            "name": "Ver datos de un usuario",
+            "url": "/user/1/get_usuario",
+            "method": "GET",
+            "sortNum": 180000,
+            "created": "2023-11-22T22:22:59.008Z",
+            "modified": "2023-11-22T22:51:21.712Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "05f34336-22d3-4149-8410-57e64b8ce3d8",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "",
+            "name": "informe stock por id",
+            "url": "/user/1/informe_movimiento_stock/2",
+            "method": "GET",
+            "sortNum": 190000,
+            "created": "2023-11-28T22:51:19.432Z",
+            "modified": "2023-12-03T22:49:08.670Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "53b71903-512f-49b2-b25a-b950303ce98a",
+            "colId": "431c37ae-9cdf-4cd9-b061-8ae7effbfc5f",
+            "containerId": "",
+            "name": "informe stock de todo un usuario",
+            "url": "/user/1/informe_movimiento_stock",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2023-11-30T16:21:19.001Z",
+            "modified": "2023-11-30T16:25:10.155Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ],
+    "settings": {
+        "headers": [
+            {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJleHAiOjE3MDE2OTgwMTR9.8Fr3w9K-zMjMg68emqVBDd4eZdS4MRRuO-dxj_FrdK4"
+            }
+        ],
+        "auth": {
+            "type": "bearer",
+            "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJleHAiOjE3MDE2OTgwMTR9.8Fr3w9K-zMjMg68emqVBDd4eZdS4MRRuO-dxj_FrdK4"
+        },
+        "options": {
+            "baseUrl": "http://127.0.0.1:5200/"
+        }
+    }
+}

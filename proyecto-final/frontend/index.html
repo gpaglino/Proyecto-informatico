@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="keywords" content="Facturación, Productos, Servicios, Facturas, Clientes">
+    <meta name="description" content="Sistema de facturacion para empresas">
+    <meta name="author" content="MGS Peña Matias-Macchia Sebastian-Rodriguez Mikael-Paglino Guillermo">
+    <link rel="icon" href="./img/logo-mgs.ico" type="image/x-icon">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>MGS Facturacion</title>
+  </head>
+
+  <body>
+    <div id="login-section">
+      <section class="user">
+        <div class="user_options-container">
+          <div class="user_options-text">
+            <div class="user_options-unregistered">
+              <h2 class="user_unregistered-title">No tienes una cuenta?</h2>
+              <p class="user_unregistered-text">
+                Crea un usuario clickeando en Registrar.
+              </p>
+              <button class="user_unregistered-signup" id="signup">
+                Registrar
+              </button>
+            </div>
+
+            <div class="user_options-registered">
+              <h2 class="user_registered-title">Tienes una cuenta?</h2>
+              <p class="user_registered-text">
+                Accede a tu cuenta clickeando en Ingresar
+              </p>
+              <button class="user_registered-login" id="login">Ingresar</button>
+            </div>
+          </div>
+          <div class="user_options-forms" id="user_options-forms">
+            <div class="user_forms-login">
+              <h2 class="forms_title">Ingresar</h2>
+              <form class="forms_form">
+                <fieldset class="forms_fieldset">
+                  <div class="forms_field">
+                    <input
+                      id="username"
+                      type="email"
+                      placeholder="Correo"
+                      class="forms_field-input"
+                      required
+                      autofocus
+                    />
+                  </div>
+                  <div class="forms_field">
+                    <div class="password-input-container">
+                      <input
+                        id="password"
+                        type="password"
+                        placeholder="Contraseña"
+                        class="forms_field-input"
+                        required
+                      />
+                      <span
+                        id="toggle-password"
+                        class="password-toggle"
+                        onclick="togglePassword('password', 'toggle-password')"
+                        >👁️</span
+                      >
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="forms_buttons">
+                  <input
+                    id="login-button"
+                    type="submit"
+                    value="Login"
+                    class="forms_buttons-action"
+                    
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="user_forms-signup">
+              <h2 class="forms_title">Registrarse</h2>
+              <form class="forms_form">
+                <fieldset class="forms_fieldset">
+                  <div class="forms_field">
+                    <input
+                      id="signup-fullname"
+                      type="text"
+                      placeholder="Nombre Completo"
+                      class="forms_field-input"
+                      required
+                    />
+                  </div>
+                  <div class="forms_field">
+                    <input
+                      id="signup-email"
+                      type="email"
+                      placeholder="Correo"
+                      class="forms_field-input"
+                      required
+                    />
+                  </div>
+                  <div class="forms_field">
+                    <input
+                      id="signup-password"
+                      type="password"
+                      placeholder="Contraseña"
+                      class="forms_field-input"
+                      required
+                    />
+                    <span
+                      id="toggle-signup-password"
+                      class="password-toggle"
+                      onclick="togglePassword('signup-password', 'toggle-signup-password')"
+                      >👁️</span
+                    >
+                    <input
+                      id="signup-repeat-password"
+                      type="password"
+                      placeholder="Repetir contraseña"
+                      class="forms_field-input"
+                      required
+                    />
+                    <span
+                      id="toggle-signup-repeat-password"
+                      class="password-toggle"
+                      onclick="togglePassword('signup-repeat-password', 'toggle-signup-repeat-password')"
+                      >👁️</span
+                    >
+                  </div>
+                </fieldset>
+                <div class="forms_buttons">
+                  <input
+                    id="plan-button"
+                    type="button"
+                    value="Seleccione su plan"
+                    class="forms_buttons-action"
+                    onclick="mostrarPlanes()"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="planModal" class="modal">
+    <section id="pricing" class="pricing-content section-padding">
+      <div class="container">
+        <div class="modal-coontent section-title text-center">
+          <span class="close">&times;</span>
+        </div>
+        <div class="row text-center">
+          <div
+            class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.1s"
+            data-wow-offset="0"
+            style="
+              visibility: visible;
+              animation-duration: 1s;
+              animation-delay: 0.1s;
+              animation-name: fadeInUp;
+            "
+          >
+            <div class="pricing_design">
+              <div class="single-pricing">
+                <div class="price-head">
+                  <h2>Basico</h2>
+                  <h1>US$70</h1>
+                  <span>/Mensual</span>
+                </div>
+                <ul>
+                  <li><b>10</b> Clientes</li>
+                  <li><b>10</b> Productos</li>
+                  <li><b>10</b> Servicios</li>
+                  <li><b>10</b> Facturas por mes</li>
+                  <li><b>Soporte Ilimitado</b></li>
+                </ul>
+                <div class="pricing-price"></div>
+                <a href="#" class="price_btn" onclick="crearUsuario('C')">Registrarse</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.2s"
+            data-wow-offset="0"
+            style="
+              visibility: visible;
+              animation-duration: 1s;
+              animation-delay: 0.2s;
+              animation-name: fadeInUp;
+            "
+          >
+            <div class="pricing_design">
+              <div class="single-pricing">
+                <div class="price-head">
+                  <h2>Medio</h2>
+                  <h1 class="price">US$100</h1>
+                  <span>/Mensual</span>
+                </div>
+                <ul>
+                  <li><b>25</b> Clientes</li>
+                  <li><b>25</b> Productos</li>
+                  <li><b>25</b> Servicios</li>
+                  <li><b>25</b> Facturas</li>
+                  <li><b>Soporte Ilimitado</b></li>
+                </ul>
+                <div class="pricing-price"></div>
+                <a href="#" class="price_btn" onclick="crearUsuario('B')">Registrarse</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.3s"
+            data-wow-offset="0"
+            style="
+              visibility: visible;
+              animation-duration: 1s;
+              animation-delay: 0.3s;
+              animation-name: fadeInUp;
+            "
+          >
+            <div class="pricing_design">
+              <div class="single-pricing">
+                <div class="price-head">
+                  <h2>Pro</h2>
+                  <h1 class="price">US$120</h1>
+                  <span>/Mensual</span>
+                </div>
+                <ul>
+                  <li><b>Clientes Ilimitados</b></li>
+                  <li><b>Productos Ilimitados</b></li>
+                  <li><b>Servicios Ilimitados</b></li>
+                  <li><b>Facturas Ilimitadas</b></li>
+                  <li><b>Soporte Ilimitado</b></li>
+                </ul>
+                <div class="pricing-price"></div>
+                <a href="#" class="price_btn" onclick="crearUsuario('A')">Registrarse</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+    <div id="modal-carga">
+      <div class="contenido-modal">
+        <div class="spinner"></div>
+        <p>Cargando datos, por favor espera...</p>
+      </div>
+    </div>
+
+    <div id="home-section">
+      <header>
+      <nav id="navDesktop" class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" onclick="mostrarTablasInicio()">
+            <span class="icon"
+              ><ion-icon name="home-outline"></ion-icon></span>
+            <span class="title">Inicio</span>
+          </a>
+          <div class="navbar-collapse" id="navbarNavAltMarkup">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="tablaClientes(false, false)">
+                    <span class="icon"
+                      ><ion-icon name="people-outline"></ion-icon
+                    ></span>
+                    <span class="title">Cliente</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="tablaProductos(false, false)">
+                    <span class="icon"
+                      ><ion-icon name="cube-outline"></ion-icon></span>
+                    <span class="title">Productos</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="tablaServicios(false, false)">
+                    <span class="icon"
+                      ><ion-icon name="construct-outline"></ion-icon></span>
+                    <span class="title">Servicio</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="tablaFacturas(false)">
+                    <span class="icon"
+                      ><ion-icon name="receipt-outline"></ion-icon
+                    ></span>
+                    <span class="title">Factura</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="cargarEstadisticas('todos')">
+                    <span class="icon">
+                      <ion-icon name="stats-chart-outline"></ion-icon>
+                    </span>
+                    <span class="title">Estadisticas</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="historialVentas(2023)">
+                    <span class="icon">
+                      <ion-icon name="logo-usd"></ion-icon>
+                    </span>
+                    <span class="title">Ventas</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="movimientoStock(false)">
+                    <span class="icon">
+                      <ion-icon name="archive-outline"></ion-icon>
+                    </span>
+                    <span class="title">Stock</span>
+                  </a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+      
+      <section class="topbar">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMobile" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <ion-icon class="menu-icon" name="menu-outline"></ion-icon>
+        </button>
+      <!-- Barra de navegación Mobile -->
+      <nav id="navMobile" class="navbar-mobile bg-light">
+        <div class="container-fluid-mobile">
+          <p class="navbar-brand-mobile">Secciones</p>
+          <div class="collapse navbar-collapse" id="navbarNavMobile">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="mostrarTablasInicio()">
+                    <span class="icon"
+                      ><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">Inicio</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="tablaClientes(false, false)">
+                    <span class="icon"
+                      ><ion-icon name="people-outline"></ion-icon
+                    ></span>
+                    <span class="title">Cliente</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="tablaProductos(false, false)">
+                    <span class="icon"
+                      ><ion-icon name="albums-outline"></ion-icon
+                    ></span>
+                    <span class="title">Productos</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="tablaServicios(false, false)">
+                    <span class="icon"
+                      ><ion-icon name="megaphone-outline"></ion-icon
+                    ></span>
+                    <span class="title">Servicio</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="tablaFacturas(false)">
+                    <span class="icon"
+                      ><ion-icon name="receipt-outline"></ion-icon
+                    ></span>
+                    <span class="title">Factura</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="cargarEstadisticas('todos')">
+                    <span class="icon">
+                      <ion-icon name="stats-chart-outline"></ion-icon>
+                    </span>
+                    <span class="title-mobile">Estadisticas</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="historialVentas(2023)">
+                    <span class="icon">
+                      <ion-icon name="stats-chart-outline"></ion-icon>
+                    </span>
+                    <span class="title">Ventas</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="movimientoStock()">
+                    <span class="icon">
+                      <ion-icon name="stats-chart-outline"></ion-icon>
+                    </span>
+                    <span class="title">Stock</span>
+                  </a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+        <div id="bienvenido">
+          
+        </div>
+        <div class="userImage">
+          <img
+            src="./img/user1.png"
+            alt="foto de usuario"
+            onclick="mostrarOpcionesUsuario()"
+          />
+          <div id="menu-usuario" style="display: none;">
+            <ul>
+                <li onclick="mostrarModalPerfil()" ><a id= "opcionPerfil" href="#">Perfil</a></li>
+                <li onclick="cerrarSesion()"><a href="#">Salir</a></li>
+            </ul>
+          </div>
+        </div>          
+          <!-- Modal de Perfil de Usuario -->
+        <div id="modal-perfil-usuario" class="modal-factura">
+          <div class="modal-content-factura">
+            <span class="close-button" onclick="cerrarModal('perfil-usuario')">&times;</span>
+            <h2>Perfil de Usuario</h2>
+            <div class="container">
+              <form id="formularioPerfil">
+                <!-- Categoría del usuario -->
+                <div class="mb-3">
+                  <label for="categoriaUsuario" class="form-label">Categoría:</label>
+                  <input id="categoria-usuario" class="form-control" readonly>
+                </div>
+                <!-- Correo electrónico del usuario -->
+                <div class="mb-3">
+                  <label for="correo-usuario" class="form-label">Correo Electrónico:</label>
+                  <input id="correo-usuario" class="form-control" readonly>
+                </div>
+                <!-- Nombre del usuario -->
+                <div class="mb-3">
+                  <label for="nombreUsuario" class="form-label">Nombre:</label>
+                  <input id="nombre-usuario" class="form-control" readonly>
+                </div>
+                <!-- Contraseña Actual -->
+                <div class="mb-3">
+                  <label for="contrasenaActual" class="form-label">Contraseña Actual:</label>
+                  <div class="password-input-container">
+                    <input type="password" id="contrasena-actual" class="form-control" readonly>
+                    <span
+                      id="toggle-usuario-contrasena"
+                      class="password-toggle"
+                      onclick="togglePassword('contrasena-actual', 'toggle-usuario-contrasena')"
+                      >👁️</span
+                    >
+                  </div>
+                </div>
+                <!-- Nueva Contraseña -->
+                <div id="contrasena-nueva" class="mb-3" style="display: none;">
+                  <label for="nuevaContrasena" class="form-label">Nueva Contraseña:</label>
+                  <div class="password-input-container">
+                    <input type="password" id="nueva-contrasena" class="form-control">
+                    <span
+                      id="toggle-usuario-nueva-contrasena"
+                      class="password-toggle"
+                      onclick="togglePassword('nueva-contrasena', 'toggle-usuario-nueva-contrasena')"
+                      >👁️</span
+                    >
+                  </div>
+                </div>
+                <!-- Repetir Nueva Contraseña -->
+                <div id="repetir-contrasena" class="mb-3" style="display: none;">
+                  <label for="repetirNuevaContrasena" class="form-label">Repetir Nueva Contraseña:</label>
+                  <div class="password-input-container">
+                    <input type="password" id="confirmar-contrasena" class="form-control">
+                    <span id="toggle-usuario-confirmar-contrasena" class="password-toggle" onclick="togglePassword('confirmar-contrasena', 'toggle-usuario-confirmar-contrasena')">👁️</span>
+                  </div>
+                </div>
+                <!-- Botones para cerrar y guardar cambios -->
+                <div id="modal-pie-perfil" class="modal-pie-perfil">
+                  <button type="button" id="btn-editar-perfil" class="btn btn-primary btn-sm" onclick="editarUsuario()">Editar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+      
+    
+      
+      <!-- Main -->
+      <main class="main">
+        
+
+        <div id="tabla-clientes" class="container"></div>
+
+        <!-- Columna de Productos y Facturas -->
+        <div id="tabla-productos" class="container"></div>
+
+        <div id="tabla-facturas" class="container"></div>
+
+        <div id="formulario-factura" class="container"></div>
+
+        <div id="detalle-factura" class="container"></div>
+
+        <div id="tabla-servicios" class="container"></div>
+
+        <div id="seccion-estadisticas" class="container"></div>
+
+        <div id="seccion-historial" class="container" style="width: 70%; margin: auto;">
+          <h2 class="titulo-tablas">Historial de Ventas</h2>
+          <div id="selector-ano-container">
+
+          </div>
+          <canvas id="grafico-ventas"></canvas>
+        </div>
+
+        <div id="seccion-control" class="container">
+          <h2 class="titulo-tablas">Movimiento de Stock</h2>
+          <div id="selector-producto-container">
+            <!-- Contenido creado dinamicamente -->
+          </div>          
+          <canvas id="movimiento-stock" width="1296" height="400"></canvas>
+        </div>
+      
+      </main>
+    </div>
+        <!-- bootstrapt -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Iconos de la pagina ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- Archivo Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

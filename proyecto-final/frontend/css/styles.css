@@ -1,0 +1,1048 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,300&display=swap');
+/*  eliminacion de estilos  genericos y fuente roboto*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "roboto", sans-serif;
+}
+
+/* Estilos de la barra de navegacion */
+:root{
+  --azul: #0026ff;
+  --blanco: #ffffff;
+  --negro: #222;
+  --grisClaro: #f5f5f58f;
+  --gris: #a1a1a1;
+  --salmon: #e4513f;
+  --azulClaro: #007bff;
+}
+
+body {
+  min-height: 100vh;
+}
+#mobile-view {
+  display: none; 
+}
+#navDesktop{
+  display: none;
+}
+#navMobile{
+  display: none;
+  background-color: var(--azul) !important;
+  width: 150px;
+}
+
+
+.navbar-toggler{
+  display: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* modal usuario */
+/* Estilo específico para el modal de perfil de usuario */
+.modal-perfil {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Situado sobre el resto del contenido */
+  z-index: 2; /* Por encima del contenido principal pero debajo de otros elementos como alertas */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Habilita el scroll si es necesario */
+  background-color: var(--gris); /* Fondo semitransparente */
+}
+
+/* Contenedor del contenido específico para el modal de perfil de usuario */
+.modal-perfil .modal-contenido {
+  background-color: var(--grisClaro);
+  margin: 10% auto; /* Ajuste de margen para centrar */
+  padding: 20px;
+  border: 1px solid var(--gris);
+  width: 50%; /* Ajuste de ancho para este modal */
+  box-shadow: 0 5px 15px var(--negro);
+}
+
+/*  ----------- Modal de la carga de tipos de planes -------------- */
+/* Estilo del modal planes */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: var(--gris);
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+  background-color: var(--blanco);
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid var(--gris);
+  width: 80%; 
+}
+
+/* El botón de cerrar (x) */
+.close {
+  color: var(--grisClaro);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--salmon);
+  text-decoration: none;
+  cursor: pointer;
+}
+.pricing-content{position:relative;}
+.pricing_design{
+    position: relative;
+    margin: 0px 15px;
+}
+.pricing_design .single-pricing{
+    background:var(--azul);
+    padding: 60px 40px;
+    border-radius:30px;
+    box-shadow: 0 10px 40px -10px rgba(0,64,128,.2);
+    position: relative;
+    z-index: 1;
+}
+.pricing_design .single-pricing:before{
+    content: "";
+    background-color: var(--blanco);
+    width: 100%;
+    height: 100%;
+    border-radius: 18px 18px 190px 18px;
+    border: 1px solid var(--grisClaro);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.price-head h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 600;
+}
+.price-head h1 {
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+
+.single-pricing ul{
+  list-style:none;
+  margin-top: 30px;
+  padding: 0;
+}
+.single-pricing ul li {
+  line-height: 36px;
+}
+.single-pricing ul li i {
+  background: #554c86;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  font-size: 11px;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 6px;
+}
+
+.price_btn {
+  background: #554c86;
+  padding: 10px 30px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 2px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.price_btn:hover{background:var(--azul);}
+a{
+text-decoration:none;    
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+.text-center {
+    text-align: center!important;
+}
+
+.section-title h2 {
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 0;
+    position: relative;
+    text-transform: capitalize;
+}
+
+/* Estilo básico para el modal de carga */
+#modal-carga {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Situado sobre el resto del contenido */
+  z-index: 9999; /* Asegura que el modal está por encima de todo */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Ancho completo */
+  height: 100vh; /* Alto completo */
+  overflow: auto; /* Habilita el scroll si es necesario */
+  background-color: rgba(0, 0, 0, 0.4); /* Color de fondo semitransparente */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor del contenido del modal */
+.contenido-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--blanco);
+  margin: 15% auto; /* 15% desde la parte superior y centrado */
+  padding: 20px;
+  border: 1px solid var(--gris);
+  width: 80%; /* Ancho del contenido */
+  text-align: center; /* Alineación del texto y spinner */
+}
+
+.contenido-modal>p {
+  margin-left: 0.5em;
+  margin-bottom: 0;
+  font-size: 1.5em;
+}
+
+/* Estilo del spinner */
+.spinner {
+  border: 4px solid var(--blanco); /* Color de fondo */
+  border-top: 4px solid var(--azul); /* Color del spinner */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+/* Animación para girar el spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/*  menu usuario */
+/* Estilos para el menú desplegable */
+#menu-usuario {
+  background-color: var(--blanco); /* Fondo blanco */
+  border: 5px solid var(--grisClaro); /* Borde ligero */
+  border-radius: 4px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  position: absolute; /* Posicionamiento absoluto para colocarlo debajo del botón/área de activación */
+  top: 40px; /* Ajusta según la altura de tu botón/área de activación */
+  right: 10px;
+  width: auto; /* Ancho del menú */
+  z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+  display: none; /* Oculto por defecto */
+}
+
+#menu-usuario ul {
+  list-style: none; /* Remueve los estilos de lista por defecto */
+  margin: 0;
+  padding: 0;
+}
+
+#menu-usuario ul li {
+  border-bottom: 1px solid var(--gris); /* Borde entre elementos */
+  padding: 10px; /* Espaciado interno para cada elemento */
+}
+
+#menu-usuario ul li:last-child {
+  border-bottom: none; /* Remueve el borde del último elemento */
+}
+
+#menu-usuario ul li a {
+  color: black; /* Color del texto */
+  text-decoration: none; /* Remueve el subrayado de los enlaces */
+  display: block; /* Hace que todo el área del elemento sea clickeable */
+}
+
+#menu-usuario ul li:hover {
+  background-color: var(--gris); /* Cambio de fondo al pasar el ratón */
+  color: var(--negro);
+}
+
+
+h1{
+  font-size: 2em;
+}
+/* Barra de navegacion */
+
+
+.cliente-mobile, .producto-mobile, .servicio-mobile{
+  border-top: var(--negro) solid 2px;
+  text-align: start;
+}
+.btn-agregar
+.title{
+  display: inline;
+  font-weight: 600;
+  display: block;
+}
+
+.hidden{
+  display:none ;
+}
+
+/* --------------------- TOPBAR ------------- */
+.topbar{
+  width: calc(100% - 180px);
+  position: relative;
+  left: 180px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: var(--azul);
+}
+
+.userImage>img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userImage{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+  
+/* ------ main -----*/
+.main{
+  position: relative;
+  width: calc(100% - 180px);
+  left: 180px;
+  min-height: 100vh;
+  background-color: var(--grisClaro);
+}
+
+.searchRow{
+  width: fit-content;
+  padding: 1.4em;
+  margin-bottom: 20px;
+}
+
+.search-container{
+  display: flex;
+  justify-content: space-between ; 
+  align-items: center ;
+  margin-bottom: 15px;
+}
+.div-search{
+  display: flex;
+  align-items: center;
+}
+
+.rows-selector {
+  width: auto; /* O cualquier ancho que prefieras */
+  margin-right: 10px; /* Ajustar según sea necesario */
+  /* Agregar cualquier otro estilo que necesites */
+}
+
+/* ------------------------- Estilos del login  ------------------ */
+#home-section{
+  display: none;
+}
+/* hidden para ocultar home */
+.hidden {
+  display: none;
+}
+/* Botón */
+button {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+/* Entrada de texto */
+input {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input::placeholder {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  color: gris;
+}
+
+/**
+ * Animación de rebote hacia el lado izquierdo
+ */
+@keyframes bounceLeft {
+  0% {
+    transform: translate3d(100%, -50%, 0);
+  }
+
+  50% {
+    transform: translate3d(-30px, -50%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+/**
+ * Animación de rebote hacia el lado derecho
+ */
+@keyframes bounceRight {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+
+  50% {
+    transform: translate3d(calc(100% + 30px), -50%, 0);
+  }
+
+  100% {
+    transform: translate3d(100%, -50%, 0);
+  }
+}
+
+/**
+ * Mostrar formulario de registro
+ */
+@keyframes showSignUp {
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/**
+ * Fondo de la página
+ */
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: var(--gris);
+  background-size: cover;
+}
+
+.user_options-container {
+  position: relative;
+  width: 80%;
+}
+
+.user_options-text {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: black;
+  border-radius: 15px;
+}
+
+/**
+ * Caja de usuario registrado y no registrado, y texto
+ */
+.user_options-registered,
+.user_options-unregistered {
+  width: 50%;
+  padding: 75px 45px;
+  color: var(--blanco);
+  font-weight: 300;
+}
+
+.user_registered-title,
+.user_unregistered-title {
+  margin-bottom: 15px;
+  font-size: 1.66rem;
+  line-height: 1em;
+}
+
+.user_unregistered-text,
+.user_registered-text {
+  font-size: 0.83rem;
+  line-height: 1.4em;
+}
+
+.user_registered-login,
+.user_unregistered-signup {
+  margin-top: 30px;
+  border: 1px solid var(--grisClaro);
+  border-radius: 15px;
+  padding: 10px 30px;
+  color: var(--blanco);
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: 0.2rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.user_unregistered-signup:hover {
+  color: black;
+  background-color: var(--gris);
+}
+
+/**
+ * Formularios de inicio de sesión y registro
+ */
+.user_options-forms {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  width: calc(50% - 30px);
+  min-height: 420px;
+  background-color: var(--blanco);
+  border-radius: 15px;
+  overflow: hidden;
+  transform: translate3d(100%, -50%, 0);
+  transition: transform 0.4s ease-in-out;
+}
+
+.user_forms-login {
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+.forms_title {
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1em;
+  text-transform: uppercase;
+  color: var(--salmon);
+  letter-spacing: 0.1rem;
+}
+
+
+.forms_field-input{
+  width: 100%;
+  border-bottom: 1px solid var(--gris);
+  padding: 6px 20px 6px 6px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: darken(--gris, 30%);
+  letter-spacing: 0.1rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.forms_field-input:focus {
+  border-color: darken(--gris, 30%);
+} 
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.forms_field-input[type="password"] {
+  padding-right: 30px; /* Espacio adicional para el ícono */
+}
+
+.password-toggle {
+  position: absolute;
+  right: 5px; /* Ajusta según tu diseño */
+  cursor: pointer;
+  padding: 6px 0px 6px 0px;
+}
+
+.forms_buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.user_forms-login .forms_buttons-forgot {
+  letter-spacing: 0.1rem;
+  color: var(--gris);
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+.forms_buttons-forgot:hover {
+  color: darken(gris, 10%);
+}
+
+.forms_buttons-action {
+  background-color: var(--salmon);
+  border-radius: 15px;
+  padding: 10px 35px;
+  font-size: .7rem;
+  font-weight: 300;
+  color: var(--blanco);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+.forms_buttons-action:hover {
+  background-color: darken(--salmon, 10%);
+}
+
+
+.user_forms-signup,
+.user_forms-login {
+  position: absolute;
+  top: 70px;
+  left: 40px;
+  width: calc(100% - 80px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.user_forms-signup {
+  transform: translate3d(120px, 0, 0);
+}
+
+.user_forms-login {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/**
+ * Disparadores
+ */
+.user_options-forms.bounceLeft {
+  animation: bounceLeft 1s forwards;
+}
+
+.user_options-forms.bounceLeft .user_forms-signup {
+  animation: showSignUp 1s forwards;
+}
+
+.user_options-forms.bounceLeft .user_forms-login {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(-120px, 0, 0);
+}
+
+.user_options-forms.bounceRight {
+  animation: bounceRight 1s forwards;
+}
+
+
+.modal-factura {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 3; /* Encima de todo */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho total */
+  height: 100%; /* Altura total */
+  overflow: auto; /* Habilitar scroll si es necesario */
+  background-color: rgba(0, 0, 0, 0.4); /* Color de fondo transparente */
+}
+
+.modal-content-factura {
+  background-color: var(--blanco);
+  margin: 8% auto; /* 15% desde la parte superior y centrado */
+  padding: 20px;
+  border: 1px solid var(--gris);
+  width: 80%; /* 80% de ancho */
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+
+  .sidebar {
+    display: none;
+  }
+}
+
+.navbar {
+  top: 0;
+  left: 0;
+  background-color: var(--azul) !important;
+  color: var(--blanco) !important;
+  z-index: 2; /* Asegura que esté en frente del contenido principal */
+  transition: 0.5s;
+  width: 180px;
+  height: 100vh;
+  position: fixed;
+  align-items: start;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 0;
+}
+
+
+.nav-item{
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.nav-link:hover, .navbar-brand:hover {
+  background-color: var(--blanco) !important;
+  color: var(--azul) !important;
+  border-radius: 15px !important;
+}
+
+.navbar-brand{
+  margin-bottom: 20px;
+  font-size: x-large;
+  display: flex;
+  margin: 0 !important;
+  justify-content: center;
+  color: var(--blanco);
+}
+.nav-link {
+  width: 100%;
+  display: inline-flex;
+  text-decoration: none;
+  color: var(--blanco);
+  text-align: center;
+  align-items: center;
+}
+.icon {
+  display: inline;
+  width: 100%;
+  max-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+
+ion-icon {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+.title-bienvenido{
+  font-weight: bold;
+  font-size: 1.5em;
+  color: var(--blanco)
+}
+#selector-ranking{
+  color: var(--negro);
+}
+
+#lista-ranking-clientes, #lista-ranking-productos, #lista-ranking-servicios{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#graficoClientes, #graficoProductos, #graficoServicios{
+  /* width: 50% !important; */
+  height: 40% !important;
+  min-height: 188px !important;
+}
+#graficoClientes canvas, #graficoProductos canvas, #graficoServicios canvas{
+  width: 100% !important;
+  height: auto !important;
+}
+
+#ranking-clientes-mobile, #ranking-productos-mobile, #ranking-servicios-mobile, #detalle-factura-mobile{
+  display: none;
+}
+
+#ranking-clientes-desktop, #ranking-productos-desktop, #ranking-servicios-desktop, #detalle-factura-table {
+  width: 40% !important;
+  border: 1px solid #cccccc; /* Un color gris claro para un borde sutil */
+  border-radius: 6px; /* Bordes ligeramente redondeados para suavidad */
+  border-collapse: collapse;
+  padding: 0;
+  box-shadow: 0 8px 20px var(--azulClaro);
+  margin-top: .5em;
+}
+/* Estilos Generales */
+.titulo-tablas {
+  background-color: var(--azulClaro); /* Elige el color de fondo azul que prefieras */
+  color: white; /* Texto en color blanco */
+  padding: 10px 0; /* Espaciado interno arriba y abajo */
+  margin-bottom: 15px; /* Margen inferior para separar del contenido siguiente */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1.5em;
+  text-align: center !important;
+}
+
+#tabla-clientes, #tabla-productos, #tabla-servicios, #tabla-facturas, #detalle-factura, #ranking-productos, #ranking-clientes, #ranking-servicios{
+  border: 1px solid #cccccc; /* Un color gris claro para un borde sutil */
+  border-radius: 6px; /* Bordes ligeramente redondeados para suavidad */
+  border-collapse: collapse;
+  padding: 0;
+  box-shadow: 0 8px 20px var(--negro);
+  margin-top: .5em;
+}
+/* Estilos para la tabla de escritorio */
+#tabla-desktop {
+  width: 100%;
+  overflow: hidden;
+}
+
+#tabla-desktop thead {
+  background-color: var(--gris); /* Color de fondo para el encabezado */
+  color: var(--gris);
+}
+
+#tabla-desktop th, #tabla-desktop td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+#tabla-desktop tbody tr {
+  border-bottom: 1px solid var(--blanco);
+}
+
+#tabla-desktop tbody tr:nth-child(even) {
+  background-color: var(--grisClaro);
+}
+
+#tabla-desktop tbody tr:last-child {
+  border-bottom: 2px solid var(--gris);
+}
+
+#tabla-desktop tbody tr:hover {
+  background-color: var(--grisClaro);
+}
+
+.btn-group .btn {
+  margin: 0 5px;
+}
+
+/* filtrado de fechas de tabla facturas */
+.fecha-factura {
+  background-color: #f3f3f3; /* Color de fondo del contenedor */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.input-fecha {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #444;
+  background-color: white;
+  margin-right: 10px; /* Espacio a la derecha del input */
+}
+
+.input-fecha:focus {
+  border-color: #0066ff;
+  outline: none;
+}
+
+#btn-filtrar {
+  padding: 10px 20px;
+  background-color: var(--azulClaro);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#btn-filtrar:hover {
+  background-color: var(--azulClaro);
+}
+
+#table-clientes-container, #table-productos-container, #table-servicios-container{
+  padding: 0;
+}
+
+
+@media (max-width: 767px) {
+  .title-bienvenido{
+    display: none;
+  }
+  h2{
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  .navbar-brand:hover,.navbar-nav:hover,.nav-item:hover,.nav-link:hover{
+    background-color: transparent !important;
+    color: var(--blanco) !important;
+  }
+  .navbar-brand{
+    font-size: large;
+  }
+  .nav-link{
+    margin: 0;
+  }
+  .navbar{
+    height: 100%;
+    width: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
+  .topbar{
+    width: 100%;
+    align-items: start;
+    top: 0;
+    left: 0;
+    height: fit-content;
+  }
+
+  .main{
+    width: 100%;
+    left: 0;
+    background-color: var(--grisClaro) !important;
+  }
+  #tabla-clientes, #tabla-productos,#tabla-servicios,#tabla-facturas{
+    text-align: center !important;
+    margin-bottom: 10px;
+  }
+  #tabla-desktop, #facturas-table{
+    display: none; /* Oculta la tabla en móviles */
+  }
+  #mobile-view {
+    display: block; /* Muestra la vista móvil */
+  }
+
+  .navbar-toggler{
+    display: block;
+  }
+
+  #navDesktop{
+    display: none;
+  }
+  #navMobile{
+    display: block;
+  }
+  .menu-icon {
+    font-size: 50px; /* Ajusta el tamaño del ícono */
+    vertical-align: middle; /* Alinea el ícono verticalmente */
+    margin-right: 0;
+  }
+
+  .navbar-brand-mobile{
+    font-size: large;
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  
+  .user_forms-signup, .user_forms-login{
+    width: 83%;
+    min-width: 110px;
+    left: 20px;
+  }
+  .user_options-forms{
+    min-width: 140px !important;
+    min-height: 360px;
+  }
+
+  .forms_field-input{
+    padding: 0;
+  }
+  .user_registered-login, .user_unregistered-signup{
+    padding: 5px 15px;
+  }
+  .forms-form{
+    padding: 0 !important;
+  }
+  .forms_buttons-action{
+    padding: 5px 15px;
+  }
+  .user_options-registered, .user_options-unregistered{
+    padding: 15px 30px;
+    margin-top: 15px;
+  }
+  .btn-agregar{
+    margin-top: 15px;
+  }
+  #ranking-clientes-desktop, #ranking-productos-desktop, #ranking-servicios-desktop {
+    display: none;
+  }
+  #ranking-clientes-mobile, #ranking-productos-mobile, #ranking-servicios-mobile, #detalle-factura-table {
+    display: block;
+  }
+
+  #table-productos-container-mobile, #table-clientes-container-mobile, #table-servicios-container-mobile, #table-facturas-container-mobile {
+    background-color: var(--grisClaro);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px var(--negro);
+  }
+
+  #table-clientes-container-mobile div, #table-servicios-container-mobile div, #table-productos-container-mobile div, #table-facturas-container-mobile div {
+    margin-bottom: 10px;
+  }
+
+  #table-clientes-container-mobile .btn-group, #table-productos-container-mobile .btn-group, #table-servicios-container-mobile .btn-group, #table-facturas-container-mobile .btn-group   {
+    display: flex;
+    justify-content: space-around;
+  }
+
+    /* Estilos comunes para la vista móvil de clientes, productos, servicios y rankings */
+  .cliente-mobile, .servicio-mobile, .producto-mobile, .factura-mobile {
+    background-color: var(--grisClaro);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px var(--negro);
+  }
+
+  .cliente-mobile div, .servicio-mobile div, .producto-mobile div, .factura-mobile div {
+    margin-bottom: 10px;
+  }
+  #lista-ranking-clientes, #lista-ranking-productos, #lista-ranking-servicios{
+    flex-direction: column;
+  }
+  .fecha-factura{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #fecha-inicio, #fecha-fin, #btn-filtrar{
+    max-width: fit-content;
+    margin-bottom: .5em;
+  }
+
+  .search-container{
+    display: none;
+  }
+
+}
